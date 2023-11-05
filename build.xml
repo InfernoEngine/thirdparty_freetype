@@ -4,60 +4,76 @@
 	<GlobalSolutionName>ThirdParty</GlobalSolutionName>
 	<GlobalNamespace>potato</GlobalNamespace>
 
-	<StaticLibrary>
+	<Library>
 		<Name>thirdparty_freetype</Name>
-		<SourceRoot>src</SourceRoot>
+		<SourceRoot>.</SourceRoot>
 		<ExportedIncludeDirectory>include</ExportedIncludeDirectory>
 		<LocalIncludeDirectory>include</LocalIncludeDirectory>
 		<GlobalPreprocessorDefines>FT2_BUILD_LIBRARY</GlobalPreprocessorDefines>		
 		<ThirdParty>true</ThirdParty>
+		<ThirdPartySharedGlobalExportDefine>FT2_BUILD_LIBRARY</ThirdPartySharedGlobalExportDefine>
+		<ThirdPartySharedLocalBuildDefine>DLL_EXPORT</ThirdPartySharedLocalBuildDefine>		
 		<ThirdPartySourceFile>
-			autofit/autofit.c;
-			base/ftbase.c;
-			base/ftbbox.c;
-			base/ftbdf.c;
-			base/ftbitmap.c;
-			base/ftcid.c;
-			base/ftfstype.c;
-			base/ftgasp.c;
-			base/ftglyph.c;
-			base/ftgxval.c;
-			base/ftinit.c;
-			base/ftmm.c;
-			base/ftotval.c;
-			base/ftpatent.c;
-			base/ftpfr.c;
-			base/ftstroke.c;
-			base/ftsynth.c;
-			base/fttype1.c;
-			base/ftwinfnt.c;
-			bdf/bdf.c;
-			bzip2/ftbzip2.c;
-			cache/ftcache.c;
-			cff/cff.c;
-			cid/type1cid.c;
-			gzip/ftgzip.c;
-			lzw/ftlzw.c;
-			pcf/pcf.c;
-			pfr/pfr.c;
-			psaux/psaux.c;
-			pshinter/pshinter.c;
-			psnames/psnames.c;
-			raster/raster.c;
-			sdf/sdf.c;
-			sfnt/sfnt.c;
-			smooth/smooth.c;
-			svg/svg.c;
-			truetype/truetype.c;
-			type1/type1.c;
-			type42/type42.c;
-			winfonts/winfnt.c
+			src/autofit/autofit.c
+			src/base/ftbase.c
+			src/base/ftbbox.c
+			src/base/ftbdf.c
+			src/base/ftbitmap.c
+			src/base/ftcid.c
+			src/base/ftfstype.c
+			src/base/ftgasp.c
+			src/base/ftglyph.c
+			src/base/ftgxval.c
+			src/base/ftinit.c
+			src/base/ftmm.c
+			src/base/ftotval.c
+			src/base/ftpatent.c
+			src/base/ftpfr.c
+			src/base/ftstroke.c
+			src/base/ftsynth.c
+			src/base/fttype1.c
+			src/base/ftwinfnt.c
+			src/bdf/bdf.c
+			src/bzip2/ftbzip2.c
+			src/cache/ftcache.c
+			src/cff/cff.c
+			src/cid/type1cid.c
+			src/gzip/ftgzip.c
+			src/lzw/ftlzw.c
+			src/pcf/pcf.c
+			src/pfr/pfr.c
+			src/psaux/psaux.c
+			src/pshinter/pshinter.c
+			src/psnames/psnames.c
+			src/raster/raster.c
+			src/sdf/sdf.c
+			src/sfnt/sfnt.c
+			src/smooth/smooth.c
+			src/svg/svg.c
+			src/truetype/truetype.c
+			src/type1/type1.c
+			src/type42/type42.c
+			src/winfonts/winfnt.c
 		</ThirdPartySourceFile>
+
+		<FilterPlatform include="windows">
+			<ThirdPartySourceFile>
+				builds\windows\ftsystem.c
+				builds\windows\ftdebug.c
+			</ThirdPartySourceFile>
+		</FilterPlatform>
+
+		<FilterPlatform include="linux">
+			<ThirdPartySourceFile>
+				builds\unix\ftsystem.c
+			</ThirdPartySourceFile>
+		</FilterPlatform>
+
 		<Dependency>thirdparty_bz2</Dependency>
 		<Dependency>thirdparty_harfbuzz</Dependency>
 		<Dependency>thirdparty_brotli</Dependency>
 		<Dependency>thirdparty_libpng</Dependency>
 		<Dependency>thirdparty_zlib</Dependency>
-	</StaticLibrary>
+	</Library>
 
 </Module>
