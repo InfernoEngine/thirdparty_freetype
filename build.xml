@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
 <Build>
-	<Module name="ThirdPartyFreeType" type="thirdparty">
+	<Module name="ThirdParty" type="thirdparty">
 		<Library>
-			<Name>thirdparty_freetype</Name>
+			<Name>ThirdParty.FreeType</Name>
 			<SourceRoot>.</SourceRoot>
 			<ExportedIncludeDirectory>include</ExportedIncludeDirectory>
 			<LocalIncludeDirectory>include</LocalIncludeDirectory>
@@ -66,11 +66,11 @@
 				</ThirdPartySourceFile>
 			</FilterPlatform>
 
-			<Dependency>thirdparty_bz2</Dependency>
-			<Dependency>thirdparty_harfbuzz</Dependency>
-			<Dependency>thirdparty_brotli</Dependency>
-			<Dependency>thirdparty_libpng</Dependency>
-			<Dependency>thirdparty_zlib</Dependency>
+			<Dependency>ThirdParty.Bzip2</Dependency>
+			<Dependency>ThirdParty.HarfBuzz</Dependency>
+			<Dependency>ThirdParty.Brotli</Dependency>
+			<Dependency>ThirdParty.LibPNG</Dependency>
+			<Dependency>ThirdParty.Zlib</Dependency>
 		</Library>
 
 	</Module>
